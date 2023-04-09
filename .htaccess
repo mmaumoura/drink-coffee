@@ -1,0 +1,11 @@
+#Turn Rewrite Engine On
+RewriteEngine On
+
+#Remove .php extension form users.php
+RewriteRule ^users/?$ users.php [NC,L]
+RewriteRule ^login/?$ users.php [NC,L]
+
+#Rewrite URL
+RewriteRule ^users/([0-9]+)/?$ users.php?id=$1 [NC,L]
+RewriteRule ^login/([0-9]+)/?$ users.php?id=$1 [NC,L]
+RewriteRule ^users/([0-9]+)/drink$ users.php?id=$1&drink=true [NC,L]
